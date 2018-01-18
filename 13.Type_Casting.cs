@@ -36,7 +36,7 @@ namespace CPPPP
         }
     }
 
-    class Inheritance
+    class Type_Casting
     {
         static void Main(string[] args)
         {
