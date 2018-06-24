@@ -8,27 +8,27 @@ namespace CPPPP
 {
     class Computer
     {
-        protected bool powerOn;     // protected로 선언됬다.
-        public void Boot() { }
-        public void Shutdown() { }
-        public void Reset() { }
+        protected bool powerOn = true;     // protected로 선언됬다.
+        public void Boot() { Console.WriteLine("부팅"); }
+        public void Shutdown() { Console.WriteLine("종료"); }
+        public void Reset() { Console.WriteLine("리셋"); }
     }
 
-    class Monitor
+    sealed class Monitor        // 의도적으로 상속하는 것을 막는 방법
     {
-        protected bool powerOn;
-        public void Display() { }
+        protected bool powerOn = true;
+        public void Display() { Console.WriteLine("출력"); }
     }
 
     class Notebook : Computer// , Monitor  // Computor 클래스 상속, 다중 상속 불가 
     {
-        bool fingerScan;
+        bool fingerScan = false;
         public bool HasFingerScanDevice() { return fingerScan; }
 
         public void CloseLid()
         {
-            if(true == powerOn)     // protected로 선언된 powerOn 변수에 접근
-                Shutdown();     // Notebook에서 추가된 메서드 내에서 부모의 메서드 호출
+            if (true == powerOn)     // protected로 선언된 powerOn 변수에 접근
+                Shutdown();     // Notebook에서 추가된 메서드 내에서 Computer의 메서드 호출
         }
     }
 
@@ -38,6 +38,7 @@ namespace CPPPP
         {
             Notebook notebook = new Notebook();
             notebook.Boot();    // Notebook 인스턴스에서 부모의 메서드를 호출
+            notebook.CloseLid();
         }
     }
 }
@@ -52,6 +53,7 @@ namespace CPPPP
 // 17 ~ 21행
 // 모니터를 나타내는 클래스다.
 // C++에서 가능했던 다중상속이 C#에서도 가능한지 실험해보기 위해 정의해주었다.
+// sealed을 앞에 선언했을 경우 의도적으로 상속을 막는 역할을 한다.
 
 // 23행
 // C#에서 상속하는 방법이다.
