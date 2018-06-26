@@ -14,157 +14,126 @@ public class Class1
 
 public class Class2 : Class1
 {
-    public void Show()      // 오버라이드, 나중에 다시 설명
+    public void Show()
     {
         Console.WriteLine("Class2");
     }
 }
 
-public class As_Is
+namespace CPPPP
 {
-    public static void Main()
+    public class As_Is
     {
-        int n = 10;
-        long i = (long)n;
-
-        if(i is long)       // is는 자료형이 같은지 비교한다.
+        public static void Main()
         {
-            Console.WriteLine(n.GetType()); // type을 출력하는 방법
-            Console.WriteLine(i.GetType());
+            int i = 10;
+
+            bool v = i is object;       // i를 object라고 부를 수 있는가?
+
+            //bool v = int is object;   // '객체 is 객체'형식으로 쓸 수 없다.
+
+            if (v)      // true
+            {
+                Console.WriteLine("int형은 Object형이다.");
+            }
+
+            bool b = i is sbyte;         // int형은 sbyte라고 부를 수 있는가?
+
+            if (b)      // false
+            {
+                Console.WriteLine("int형은 sbyte형이다.");
+            }
+
+            Class2 c2 = new Class2();
+            Class1 c1 = c2 as Class1;   // c2가 Class1과 호환되면 c2의 메모리를 가리키게 한다.
+
+            if (c2 is Class1) Console.WriteLine("c2는 Class1이다.");   // 이건 당현히 가능
+
+            if (c1 is Class2) Console.WriteLine("c1은 Class2이다.");   // 이건 왜 가능?
+
+            if (ReferenceEquals(c1, c2)) c1.Show();     // 왜 Class1이지?
+
+            Type type = c2.GetType();       // Type을 받아와서 쓰는게 정석이다.
+
+            Console.WriteLine(type);        // 이건 당연히 Class2
+
+            Console.WriteLine(c1.GetType());// c2를 Class1으로 형변환해서 저장했는데 왜 Class2라 뜨지?
         }
-
-        Class1 cl1 = new Class1();
-        Class2 cl2 = cl1 as Class2;         // as로 안전한 형변환을 한다.
-
-        Console.WriteLine(cl1 is Class1);   // true
-        Console.WriteLine(cl1 is Class2);   // false
-        Console.WriteLine(cl2 is Class1);   // false
-        Console.WriteLine(cl2 is Class2);   // false
-
-        Console.WriteLine(cl1.GetType());
-        //Console.WriteLine(cl2.GetType()); // 불가능
-
-        cl1.Show();
-        //cl2.Show();                       // 불가능
-
-        Class2 cl4 = new Class2();
-        Class1 cl3 = cl4 as Class1;         // as로 안전한 형변환을 한다.
-
-        Console.WriteLine(cl3 is Class1);   // true
-        Console.WriteLine(cl3 is Class2);   // true
-        Console.WriteLine(cl4 is Class1);   // true
-        Console.WriteLine(cl4 is Class2);   // true
-
-        Console.WriteLine(cl3.GetType());   // Class2???
-        Console.WriteLine(cl4.GetType());   // Class2
-
-        cl3.Show();                         // Class1???
-        cl4.Show();                         // Class2
     }
 }
 
-// 17행
-// Computer 상속을 받은 Notebook 클래스에서 메소드를 오버라이드 했다.
-// C++에서 똑같은 개념이지만 C#에서는 조금 다르다.
-// 다음에 다시 설명
-
-// 28행
-// int형을 long형으로 명시적 형변환을 했다.
-// 하지만 암묵적인 형변환이 가능하다.
-
-// 30행
-// is 예약어를 이용한 자료형 비교
-// expr is type이 원형
-// expr과 type이 같은지를 비교한다.
-// 자료형이 같으면 true, 아닐 경우 false를 반환한다.
-
-// 32, 33행
-// GetType()을 이용하여 자료형을 구할 수 있다.
-// 값형식(원시 자료형), 참조형식(클래스)을 가리지 않고 자료형을 알려준다.
-// 출력해주는 타입은 닷넷형식으로 출력해준다.
-// 나중에 다시 설명
-
-// 37행
-// as 예약어를 이용한 형변환
-// expression as type이 원형
-// expression이 클래스형일 경우에 type형 클래스로 변환이 가능한지 비교한다.
-// 값형식(int, long 등)끼리는 as를 사용할 수 없다. -> 중요
-// 변환 가능하면 type형으로 반환
-// 변환 불가능하면 null을 반환
+// 31행
+// int형인 i를 object형이라 부를 수 있는가?
+// 가능하면 true, 불가능하면 false를 반환한다.
+// object형 객체는 int나 double같은 기본 자료형을 포함하여 어떤 클래스보다 상위의 존재다.
+// 한마디로 object는 모든 객체의 최고조상 클래스다.
 //
-// Class1형인 cl1을 이용하여 Class2형 변수를 생성한다.
-// 하지만 '사람을 소크라테스라 부른다.'는 논리는 말도 안된다.
-// 따라서 as의 반환값은 null
+// is형과 ==, Equals(), object.ReferenceEquals()는 작동방식이 조금씩 다르다.
+// is는 호환이 가능한가?를 판별한다.
+// 즉, 논리적인 물음에 참, 거짓을 판단하여 bool형을 반환한다.
+//
+// ==, Equals(), object.ReferenceEquals()는 값형식, 참조형식에 따라서 메모리 혹은 메모리값이 서로 같은가?를 판단하는 것이다.
+// 논리적인 물음보다 실질적으로 값이 서로 같냐, 혹은 같은 메모리를 공유하고 있느냐를 판단하는 것이다.
+// 이에 대해서는 따로 연구하여 올린다.
 
-// 39행
-// Class1형 cl1 안에 Class1이 있다.
-// '사람은 사람이다.'
-// 논리적으로 틀릴 수 없다.
-// true
+// 33행
+// is는 '인스턴스 is 객체'형식으로 사용해야 한다.
+// '객체 is 객체'와 같은 형식으로 사용하려 하기 때문에 사용이 불가능하다.
+
+// 35 ~ 38행
+// 31행이 true이면 실행이 된다.
+// 어떤 객체든 object 객체라고 부를 수 있기 때문에 무조건 참이 되므로 항상 실행된다.
 
 // 40행
-// Class1형 cl1은 Class2이다.
-// '사람은 소크라테스이다.'
-// 말도 안되는 논리다.
-// 모든 사람은 소크라테스가 아니기 때문이다.
-// false
+// int형인 i를 sbyte형이라 부를 수 있는가?
+// int, char, byte, double 등등 기본 자료형들은 object에서, 그리고 System.ValueType에서 파생이 됬다.
+// object는 참조형이지만 값형식을 따르는 따르는 객체들을 정의하기 위해 System.ValueType을 상속하여 정의하였다.
+// object는 System.ValueType를 상속하고 각 기본 자료형을 또 상속한다.
+// 따라서 각 기본 자료형들은 같은 부모를 상속받은 별개의 객체이기 때문에 서로 호환이 되지 않는다.
+// 결과적으로 false를 반환한다.
 
-// 41행
-// Class2형 cl2는 Class1이다.
-// 소크라테스는 사람이다.
-// 맞는 논리다.
-// 하지만 애초에 사람을 소크라테스라고 부르는 과정이 논리적으로 맞지 않다.
-// false
+// 42 ~ 45행
+// 40행이 false이므로 문자열이 출력되지 않는다.
 
-// 42행
-// Class2형 cl2는 Class2이다.
-// 소크라테스는 소크라테스이다.
-// 완벽한 논리이다.
-// 하지만 소크라테스라고 불리는 사람들은 원래 소크라테스와 같지 않다.
-// false
+// 48행
+// as는 is와 비슷하지만 조금 다르다.
+// as는 호환이 되는지 판단하는 것 뿐만 아니라 호환이 가능하다면 인스턴스를 가리키게끔 한다.
+// 호환이 불가능하다면 null을 반환하게 된다.
+// c2는 Class1을 상속받은 Class2형이기 때문에 Class1과 호환이 가능하다.
+// 따라서 c1은 c2가 가리키는 메모리를 Class1으로서 가리킬 수 있는 것이다.
 
-// 45, 48행
-// cl2에 null이 저장되어 있으므로 기능을 사용할 수 없다.
+// 50행
+// c2는 Class1형과 호환이 가능하므로 문장이 출력된다.
 
-// 51행
-// Class2형인 cl4를 이용하여 Class1형 변수를 생성한다.
-// '소크라테스는 사람이다.'
-// 소크라테스라는 사람에서 '사람'이라는 기능을 빼낸 것과 같다.
-
-// 53행
-// '사람은 사람이다.'
-// 완벽한 논리다.
-// true
+// 52행
+// c1은 Class1형이므로 Class2형과 호환이 불가능하다.
+// 다르게 말하자면 Class1을 Class2라고 부르는 것이 불가능하다는 뜻이다.
+// '사람은 소크라테스다.'와 같은 문장이라고 보면 된다.
+// 하지만 true가 나오게 되면서 문장이 출력된다.
+//
+// 이게 어찌된 일인지?
+// c1은 참조형에 불과하며 실질적인 자료형은 Class2형이다.
+// 따라서 'Class2형은 Class2형이다.'와 같은 문장이 되므로 참이 된다.
 
 // 54행
-// '사람은 소크라테스이다.'
-// 말도 안된다.
-// 하지만 값은 true이다.
-// 어찌된 일인가?
-// 51행에서 '사람을 소크라테스라 부른다.'는 의미는 소크라테스의 기능을 가진 사람을 생성한다는 의미와 같다고 할 수 있지 않을까?
-// 사람은 서로 다를지언정 기능이 서로 같다.
-
-// 55행
-// '소크라테스는 사람이다.'
-// 맞는 논리다.
-// true
+// c1과 c2가 같은 메모리를 참조하고 있는지 판별하는 메소드다.
+// 두 변수가 같은 메모리를 참조하므로 true가 나오게 되면서 문장이 출력된다.
+// c1이 참조하는 메모리는 c2와 같으니 Class2라고 출력되겠지?
+// 하지만 Class1이라고 출력된다.
+// 이게 어찌된 일?
+//
+// C++에서 배웠던 참조형식과 실형식에 대한 내용과 같다.
+// virtual이 아닌 참조는 참조형식으로 출력이 된다.
 
 // 56행
-// '소크라테스는 소크라테스다.'
-// 완벽한 논리다.
-// true
+// GetType()은 class의 타입 정보를 가지고 있는 System.Type의 인스턴스를 가져오는 메소드다.
+// 그렇기 때문에 c2.GetType()은 c2의 class타입을 가져와서 type에 저장하는 것이다.
 
 // 58행
-// cl3은 Class1형이다.
-// 하지만 GetType()을 하니 Class2형으로 출력된다.
-// 부모가 자식의 기능을 사용한다고 보는게 타당하지 않은가?
+// type을 출력하면 c2의 class타입을 출력하게 된다.
+// c2는 Class2형이므로 당연히 Class2형이라고 출력된다.
 
-// 61행
-// Class1이라 출력된다.
-// Class2형인데 왜 Class1의 함수를 사용하는가?
-// Class2라는 확장된 자료형을 가지고 있으나 Class1의 기능만 사용할 수 있다고 생각할 수 있따.
-
-// 앞서 봤던 형변환은 논리적인 문제가 아니라 계층문제라고 보는 것이 맞을 듯 하다.
-// 자식은 부모의 기능을 사용할 수 있는가?
-// 부모는 자식의 기능을 사용할 수 있는가?
-// 이는 조금 더 연구해봐야 한다.
+// 60행
+// c1은 Class1형인데 왜 Class2형이라 출력되지?
+// 56행의 설명보다 더 정확히 말하자면 c1이 참조하는 메모리가 Class2형이기 때문이다.
+// GetType()은 참조형식의 타입을 알려주는 것이 아니라 실형식의 타입을 알려준다.
