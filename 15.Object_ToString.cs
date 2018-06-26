@@ -11,12 +11,12 @@ class Test : object     // object를 상속함을 써주지 않아도 자동으�
 
 namespace CPPPP
 {
-    class object_ToString
+    class Object_ToString
     {
         static void Main(string[] args)
         {
-            object_ToString toString = new object_ToString();
-            Console.WriteLine(toString.ToString());             // CPPPP.object_ToString
+            Object_ToString toString = new Object_ToString();
+            Console.WriteLine(toString.ToString());             // CPPPP.Object_ToString
 
             Test test = new Test();
             Console.WriteLine(test.ToString());                 // Test
