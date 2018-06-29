@@ -29,6 +29,7 @@ namespace CPPPP
 
 // 19행
 // test의 Type을 가져온다.
+// GetType()은 .Net Framework의 메소드다.
 
 // 21행
 // Type을 출력한다.
@@ -36,3 +37,5 @@ namespace CPPPP
 
 // 23행
 // 인스턴스를 만들지 않아도 클래스 이름으로 바로 Type을 구하는 방법이다.
+// GetType()은 .Net Framework, typeof()는 C#에서 사용하는 문법이다.
+// 무엇을 쓰든 상관없다.
