@@ -23,9 +23,9 @@ class Mathematics
     }
 
     // 외부에서 접근할 수 있는 메소드
-    public void Calculate(int operand1, char opCode, int operand2 )
+    public void Calculate(int operand1, char opCode, int operand2)
     {
-        switch(opCode)
+        switch (opCode)
         {
             case '+':
                 Console.WriteLine("+ : " + methods[0](operand1, operand2)); // 델리게이트 배열에 접근
@@ -37,7 +37,7 @@ class Mathematics
                 Console.WriteLine("* : " + methods[2](operand1, operand2)); // 델리게이트 배열에 접근
                 break;
             case '/':
-                if(operand2 != 0)
+                if (operand2 != 0)
                     Console.WriteLine("/ : " + methods[3](operand1, operand2)); // 델리게이트 배열에 접근
                 else
                     Console.WriteLine("0으로 나눌 수 없습니다.");
@@ -46,11 +46,26 @@ class Mathematics
     }
 }
 
+// delegate 없이 WorkDelegate를 정의하는 방법이지만 사용할 수 없다.
+//class WorkDelegate : System.MulticastDelegate
+//{
+//    public WorkDelegate(object obj, IntPtr method);
+//    public virtual void Invoke(int arg1, char arg2, int arg3);
+//}
+
 namespace CPPPP
 {
     class Delegate
     {
         delegate void WorkDelegate(int arg1, char arg2, int arg3);  // Main()에서 사용할 델리게이트 선언
+
+        delegate void CalcDelegate(int x, int y); // 다른 식으로 델리게이트를 사용할 수 있음을 보여주려고 선언
+
+        // 정적 메소드 선언
+        static void Add(int x, int y) { Console.WriteLine("+ : " + (x + y)); }
+        static void Sub(int x, int y) { Console.WriteLine("- : " + (x - y)); }
+        static void Mul(int x, int y) { Console.WriteLine("* : " + x * y); }
+        static void Div(int x, int y) { Console.WriteLine("/ : " + x / y); }
 
         static void Main(string[] args)
         {
@@ -62,6 +77,22 @@ namespace CPPPP
             work(10, '-', 5);
             work(10, '*', 5);
             work(10, '/', 5);
+
+            Console.WriteLine();
+
+            // 델리게이트에 각 메소드들을 연산 및 저장으로 인스턴스를 추가한다.
+            CalcDelegate calc = Add;
+            calc += Sub;
+            calc += Mul;
+            calc += Div;
+
+            calc(4, 2);     // 델리게이트에 저장된 인스턴스들을 모두 실행한다.
+
+            Console.WriteLine();
+
+            calc -= Sub;    // 인스턴스를 뺄 수 있다.
+
+            calc(4, 2);     // 남아있는 인스턴스들로만 연산을 한다.
         }
     }
 }
@@ -90,14 +121,41 @@ namespace CPPPP
 // 외부에서 접근할 수 있는 메소드를 정의해준다.
 // 정의를 해줄 때 델리게이트에 접근하여 함수의 기능을 사용한다.
 
-// 52행
+// 50 ~ 54행
+// 델리게이트는 메소드를 가리킬 수 있는 내부 닷넷 타입에 대한 "간편 표기법"이다.
+// 내부 닷넷 타입은 System.MulticastDelegate다.
+// System.MulticastDelegate는 System.Delegate를 상속받고, System.Delegate는 다시 System.Object를 상속받는다.
+// 그렇기 때문에 delegate없이 델리게이트를 정의하기 위해서 직접 정의해야 한다.
+// 델리게이트로 만들 클래스는 System.MulticastDelegate를 상속 받아서 정의하면 된다.
+// 하지만 C#은 System.MulticastDelegate를 상속해서 정의할 수 없게 막았기 때문에 원리만 이렇다고 알아두자.
+
+// 60행
 // Main()에서 사용할 델리게이트도 만든다.
 
-// 57행
-// 52행에서 선언한 델리게이트에 클래스에서 정의한 메소드와 연결해준다.
+// 62행
+// 다른 식으로 델리게이트를 사용하는 방법을 보기 위해서 선언했다.
+
+// 65 ~ 68행
+// 정적 메소드들이다.
+// 62행에서 선언한 델리게이트와 같이 사용하는 법을 볼 것이다.
+
+// 73행
+// 60행에서 선언한 델리게이트에 클래스에서 정의한 메소드와 연결해준다.
 // 여기서도 19 ~ 22행에서 처럼 델리게이트와 메소드를 연결할 때 메소드 이름만 써주면 된다.
 // 중요한 것은 델리게이트로 선언한 변수도 매개변수가 3개고 연결해준 메소드도 매개변수가 3개다.
 // 매개변수가 같은 델리게이트와 메소드를 연결해줘야 한다.
 
-// 61 ~ 64행
+// 75 ~ 79행
 // 델리게이트는 함수포인터처럼 델리게이트 이름에 매개변수만 전달하여 메소드 호출이 가능하다.
+
+// 84 ~ 87행
+// 델리게이트에 +=로 메소드를 연결해줄 수 있다.
+
+// 89행
+// 델리게이트에 값을 전달해주면 모든 메소드를 실행한다.
+
+// 93행
+// -=로 연결된 메소드를 끊을 수 있다.
+
+// 95행
+// 남아있는 메소드들만 실행된다.
