@@ -96,7 +96,7 @@ namespace CPPPP
             Console.WriteLine(Sum);
 
             // SumPrime 콜백 메서드를 제거한 후 다시 1 ~ 15까지 소수를 구하는 메서드 호출
-            gen.RemoveDelegate(callsum);
+            gen.RemoveDelegate(callsum);        // 델리게이트 구독 해지
             gen.Run(15);
         }
     }
