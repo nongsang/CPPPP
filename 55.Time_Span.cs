@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Span
+    class Time_Span
     {
         public static void Main()
         {
