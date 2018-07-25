@@ -14,7 +14,7 @@ namespace CPPPP
 
             Console.WriteLine(txt.ToUpper());
         }
-
+        
         public static void Main()
         {
             string txt = Console.ReadLine();
