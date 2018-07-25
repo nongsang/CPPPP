@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Date
+    class Date_Time
     {
         public static void Main()
         {
