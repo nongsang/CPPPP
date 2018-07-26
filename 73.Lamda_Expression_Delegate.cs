@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;         // 스레드를 사용하려면 추가해야 한다.
 
 namespace CPPPP
 {
