@@ -22,9 +22,9 @@ namespace CPPPP
             th1.Start();        // th1 스레드 시작
 
             Thread th2 = new Thread(
-                delegate (/*매개변수*/)           // 정말 죽어도 1번만 쓸 기능이라면 delegate로 익명메소드를 사용할 수 있다.
-                {
-                    Console.WriteLine("바보");    // 나중에 람다에서 더 자세히 설명한다.
+                delegate (object obj)           // 정말 죽어도 1번만 쓸 메소드라면 delegate로 익명 메소드를 사용하면 편리하다.
+                {                               // 매개변수의 자료형까지 정의 해줘야 한다.
+                    Console.WriteLine("바보");
                 });
 
             th2.Start();        // th2 스레드 시작
