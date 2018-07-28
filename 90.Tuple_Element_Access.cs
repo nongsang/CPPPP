@@ -7,7 +7,7 @@ using static System.Console;    // WriteLine()이라고 줄여서 쓰고싶어
 
 namespace CPPPP
 {
-    class Tuple_Element_Access
+    class Tuple_Partial_Field
     {
         static (bool, int) ParseInteger(string txt) // 값을 2개 던지나 튜플의 원소의 이름이 없다.
         {                                           // 다른 위치에서 사용할 때 이름을 부여할 수 있다.
