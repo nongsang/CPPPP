@@ -20,6 +20,9 @@ namespace CPPPP
                 list.ForEach((e) => WriteLine(e));      // ForEach는 작업을 위한 메소드를 전달해야 하므로 람다로 전달한다.
             }                                           // obj는 obj임을 이미 알고 있으므로 뒤에 있는 접근할 대상의 자료형을 명시하므로써
                                                         // as의 역할을 is로 할 수 있다.
+
+            if (obj is List<string>)    // List<string>의 뒤에 변수 이름이 없으면 
+                WriteLine("바보");      // 그냥 obj 자료형이 호환이 되는지만 판별한다.
         }
     }
 }
