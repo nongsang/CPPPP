@@ -16,10 +16,10 @@ namespace CPPPP
             if (i > 300) { }    // 이 if문을
             else { }            // switch문으로 바꿀  수 있다.    
 
-            switch(i)
+            switch (i)
             {
                 case int j when j > 300:    // 새롭게 생성한 int형 j에 i값을 저장 후 300을 초과하는지 검사한다.
-                    WriteLine(j);           // 그리고 출력
+                    WriteLine(j);           // 300을 초과한다면 출력
                     break;
 
                 default:                    // 그렇지 않다면
