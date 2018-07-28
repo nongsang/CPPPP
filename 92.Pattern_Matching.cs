@@ -7,7 +7,7 @@ using static System.Console;    // WriteLine()이라고 줄여서 쓰고싶어
 
 namespace CPPPP
 {
-    class Is_Pattern_Matching
+    class Pattern_Matching
     {
         public static void Main()
         {
