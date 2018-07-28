@@ -21,7 +21,7 @@ namespace CPPPP
             }
             catch { }
 
-        return Tuple.Create(result, number);        // 반환할 때 Tuple을 만들어서 반환한다.
+            return Tuple.Create(result, number);        // 반환할 때 Tuple을 만들어서 반환한다.
         }
 
         public static void Main()
