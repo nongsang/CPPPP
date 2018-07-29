@@ -23,11 +23,14 @@ namespace CPPPP
                     WriteLine("Null");          // 형변환할 필요없이 그냥 Null을 출력
                                                 // 상수와 비교를 하므로 상수 패턴
 
-                else if (item is DateTime dt)   // DateTime타입이 있다면 자동으로 값형식으로 형변환하여 접근한다.
+                //else if (item is DateTime dt) // DateTime타입이 있다면 자동으로 값형식으로 형변환하여 접근한다.
+                else if (item is DateTime)      // 변수 이름 dt를 없애도 접근할 수 있으나 item으로 사용해야 한다.
                     WriteLine(item);            // 앞에서 나온 예와 달리 타입 패턴을 가진다.
                                                 // 값을 비교하는 것이 아니라 요소가 값형식인 DateTime과 비교하기 때문이다.
 
                 else if (item is List<int> list)// List<int>를 만나면 자동으로 참조형식으로 형변환하여 접근한다.
+                //else if (item is List<int>)   // 변수 이름 list를 없애도 접근할 수 있으나 item으로 사용해야 한다.
+                                                // 거기다가 list라는 변수명이 없으므로 list.Count같은 기능은 사용할 수 없다.
                     WriteLine(list.Count);      // 이것도 값을 비교하는 것이 아니라 참조타입과 비교하기 때문에 타입 패턴이다.
 
                 else                            // 타입패턴이라는 이름에서 혼동할 수 있는데
