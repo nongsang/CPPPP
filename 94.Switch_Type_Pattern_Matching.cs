@@ -24,15 +24,16 @@ namespace CPPPP
                     case null:              // null이 있으면
                         WriteLine("Null");  // 값을 출력
                         break;
-                    case DateTime dt:       // DateTime 자료형을 가진 요소가 있으면
+                    //case DateTime dt:     // DateTime 자료형을 가진 요소가 있으면
+                    case DateTime _:        // 변수 명이 필요없다면 _로 변수명 생략 가능
                         WriteLine(item);    // DateTime을 가리키는 item의 값을 출력
                         break;
                     case List<int> list:        // List<int>형 데이터가 있으면 list의 데이터 갯수 출력
+                                                //case List<int> _:         // list도 변수 명이 필요없다면 _로 변수명 생략 가능하지만 list.Count같은 명령은 할 수 없다.
                         WriteLine(list.Count);  // List<int>형인지를 검사하는 것이지 List<double>처럼 같은 리스트라고 출력하지는 않는다.
                         break;
                     //default:      // 기존처럼 default로 해도 되고.
                     case var elem:  // 이렇게 해도 default랑 같은 뜻이다.
-                                    // elem는 아무 의미 없음
                         WriteLine("아무것도 없음");
                         break;
                 }
