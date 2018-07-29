@@ -29,7 +29,7 @@ namespace CPPPP
                                                 // 값을 비교하는 것이 아니라 요소가 값형식인 DateTime과 비교하기 때문이다.
 
                 else if (item is List<int> list)// List<int>를 만나면 자동으로 참조형식으로 형변환하여 접근한다.
-                                                //else if (item is List<int>)   // 변수 이름 list를 없애도 접근할 수 있으나 item으로 사용해야 한다.
+                //else if (item is List<int>)   // 변수 이름 list를 없애도 접근할 수 있으나 item으로 사용해야 한다.
                                                 // 거기다가 list라는 변수명이 없으므로 list.Count같은 기능은 사용할 수 없다.
                     WriteLine(list.Count);      // 이것도 값을 비교하는 것이 아니라 참조타입과 비교하기 때문에 타입 패턴이다.
 
