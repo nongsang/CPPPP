@@ -8,12 +8,12 @@ namespace CPPPP
 {
     class Person
     {
-        static int CountOfInstance;  // 정적 필드
+        public static int CountOfInstance;  // 정적 필드
         string name;
 
-        public Person(string name) // 생성자
+        public Person(string name)  // 생성자
         {
-            ++CountOfInstance;
+            ++CountOfInstance;      // 정적 필드게 값 +1
             this.name = name;       // 이 클래스의 필드에 매개변수의 값을 대입
             Console.WriteLine("생성자 호출");
         }
@@ -25,8 +25,8 @@ namespace CPPPP
         {
             Console.WriteLine(Person.CountOfInstance);  // 출력 결과 0
 
-            Person person1 = new Person("홍길동");
-            Person person2 = new Person("홍길순");
+            Person person1 = new Person("홍길동");     // 여기서 CountOfInstance가 1
+            Person person2 = new Person("홍길순");     // 여기서 CountOfInstance가 2
 
             Console.WriteLine(Person.CountOfInstance);  // 출력 결과 2
         }
