@@ -36,7 +36,7 @@ namespace CPPPP
         }
     }
 
-    class Type_Casting
+    class Class_Type_Casting
     {
         static void Main(string[] args)
         {
