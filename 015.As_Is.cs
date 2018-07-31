@@ -30,7 +30,7 @@ namespace CPPPP
 
             bool v = i is object;       // i를 object라고 부를 수 있는가?
 
-            //bool v = int is object;   // '객체 is 객체'형식으로 쓸 수 없다.
+            //bool v = int is object;   // '자료형 is 자료형'형식으로 쓸 수 없다.
 
             if (v)      // true
             {
