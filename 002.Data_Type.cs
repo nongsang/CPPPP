@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Hello_World
+    class Data_Type
     {
         static void Main(string[] args)
         {
