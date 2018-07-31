@@ -21,7 +21,7 @@ namespace CPPPP
             pi = value;
         }
 
-        public double Pi    // 프로퍼티, 함수 형태가 아니다.
+        public double Pi    // 프로퍼티, 메소드 형태가 아니다.
         {
             get { return pi; }  
             set
