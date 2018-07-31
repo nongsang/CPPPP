@@ -17,6 +17,7 @@ struct Vector
         get { return x; }
         set { x = value; }
     }
+
     public int Y
     {
         get { return y; }
