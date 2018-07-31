@@ -8,12 +8,12 @@ namespace CPPPP
 {
     class Person
     {
-        private static int CountOfInstance;  // private 정적 필드
+        private static int CountOfInstance;  // 이번에는 private 정적 필드로 선언
         string name;
 
         public Person(string name) // 생성자
         {
-            ++CountOfInstance;
+            ++CountOfInstance;      // 생성할 때마다 CountOfInstance를 +1씩 한다.
             this.name = name;
             Console.WriteLine("생성자 호출");
         }
@@ -30,8 +30,8 @@ namespace CPPPP
         {
             Person.OutputCount();   // 클래스 이름으로 정적 메서드 호출
 
-            Person person1 = new Person("홍길동");
-            Person person2 = new Person("홍길순");
+            Person person1 = new Person("홍길동"); // CountOfInstance가 1
+            Person person2 = new Person("홍길순"); // CountOfInstance가 2
 
             Person.OutputCount();  // 출력 결과 2
         }
