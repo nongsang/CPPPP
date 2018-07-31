@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 class Mathematics
 {
     delegate int CalcDelegate(int x, int y);    // 델리게이트로 선언, 함수포인터같이 사용할 수 있는 객체이다.
+                                                // Calc이라고 하지않고 CalcDelegate라고 델리게이트에는 뒤에 접미사 Delegate를 붙인다. 
 
     // 각각 정적 메소드로 인스턴스 없이 호출할 수 있지만 private이므로 클래스 내부에서만 호출 가능;
     static int Add(int x, int y) { return x + y; }
