@@ -16,9 +16,9 @@ class Book
     public Book(string title, decimal isbn, string author)  // 모든 생성자는 이 생성자를 호출한다.
     {
         
-        this.title = title;
-        this.isbn = isbn;
-        this.author = author;
+        this.title = title;     // this가 붙은 변수는 필드를 뜻하고
+        this.isbn = isbn;       // 저장하려는 값은
+        this.author = author;   // 매개변수이다.
         ++count;                // 생성자에서 정적 멤버 호출가능하다.
         //++(this.count);       // 정적 멤버에는 this로 사용이 불가능하다.
     }
@@ -26,16 +26,23 @@ class Book
     public Book(string title) : this(title, 0)  
     {
         // 매개변수가 1개인 생성자를 정의할 때 this를 이용하여 재정의 해준다.
+        // this로 매개변수 2개를 넣고 호출했으므로 매개변수가 2개인 생성자를 호출한다.
+        // 따라서 Book(string title, decimal isbn)이 호출된다.
     }
 
     public Book(string title, decimal isbn) : this(title, isbn, string.Empty)
     {
         // 매개변수가 2개인 생성자를 정의할 때 this를 이용하여 재정의 해준다.
+        // this로 매개변수 3개를 넣고 호출했으므로 매개변수가 3개인 생성자를 호출한다.
+        // 따라서 Book(string title, decimal isbn, string author)이 호출된다.
     }
 
     public Book() : this(string.Empty, 0, string.Empty)
     {
         // 디폴트 생성자를 호출할 때 this를 이용하여 재정의 해준다.
+        // this로 매개변수 3개를 넣고 호출했으므로 매개변수가 3개인 생성자를 호출한다.
+        // 따라서 Book(string title, decimal isbn, string author)이 호출된다.
+        // 결국 Book(string title, decimal isbn, string author)를 호출하게 된다.
     }
 
     public void Show()
