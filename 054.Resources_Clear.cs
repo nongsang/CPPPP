@@ -26,7 +26,7 @@ namespace CPPPP
                                                                             // 왜냐하면 생성된 파일을 관리 힙에서 계속 물고 있기 때문이다.
                                                                             // 따라서 Close()는 파일을 더이상 관리하지 않게 해주는 기능이다.
             fs.Dispose();       // 하지만 Close가 자원해제를 대표할 수 없다.
-                                // 자원해제를 명시해야 한다면 IDisposable 인터페이스를 상속받아, Dispose로 파일을 해제하는 것이 권장된다.
+                                // 자원 해제를 명시해야 한다면 IDisposable 인터페이스를 상속받아, Dispose로 파일을 해제하는 것이 권장된다.
                                 // FileStream은 IDisposable을 상속받으므로 Dispose를 사용할 수 있다.
         }
     }
