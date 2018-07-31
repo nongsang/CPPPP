@@ -19,7 +19,7 @@ interface IKeyboard
 
 class Notebook : Computer, IMoniter, IKeyboard      // 다중 상속이 가능해진다.
 {
-    public void TurnOn() { Console.WriteLine("Turn On"); }      // 오버라이딩이지만 override 선언을 안해줘도 된다.
+    public void TurnOn() { Console.WriteLine("Turn On"); }      // 오버라이딩이지만 인터페이스는 override 선언을 안해줘도 된다.
     void IMoniter.TurnOn() { Console.WriteLine("Turn On"); }    // 인터페이스에 메소드를 명시적으로 종속시킨다는 뜻.
 
     int key;
