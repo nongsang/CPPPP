@@ -26,7 +26,7 @@ class UnmanagedMemoryManager : IDisposable
         }
     }
 
-    ~UnmanagedMemoryManager()       // 소멸자
+    ~UnmanagedMemoryManager()       // 종료자
     {
         Dispose();                  // 하는 일은 Dispose를 호출하는 것
     }
