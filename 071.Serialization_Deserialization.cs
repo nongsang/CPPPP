@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Serialization_Deserialization
+    class Serialization_Deserialization     // 여기서 CPPPP_DB / 01.Memory_Stream.cs로 데이터베이스를 공부하면 된다.
     {
         public static void Main()
         {
