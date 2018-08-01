@@ -15,7 +15,9 @@ namespace CPPPP
 
             Console.WriteLine("오늘 날짜 : " + now);
 
-            TimeSpan gap = endOfYear - now;     // TimeSpan으로 DateTime 사이의 시간 간격에 대한 정보를 구할 수 있다.
+            TimeSpan gap = endOfYear - now; // DataTime 타입의 사칙연산은 빼기밖에 없다.
+                                            // 연산 결과는 DateTime 사이의 시간 간격을 나타내는 TimeSpan으로 나온다.
+
             Console.WriteLine("올해의 남은 날짜 : " + gap.TotalDays);  // TotalDays는 double값으로 남은 일 수를 구할 수 있다.
                                                                       // Days는 int형으로 남은 일 수를 구할 수 있다.
                                                                       // 그 밖에 TotalHours, TotalMilliseconds 등등이 있다.
