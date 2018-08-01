@@ -43,7 +43,7 @@ namespace CPPPP
 {
     class Generic
     {
-        static void Show<T>(T item)     // 메소드도 제너릭 사용 가능
+        static void Show<T>(T item)     // 메소드도 제너릭으로 정의 가능
         {
             Console.WriteLine(item);
         }
