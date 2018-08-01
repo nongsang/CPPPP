@@ -39,6 +39,10 @@ class Utility   // 템플릿을 사용하지만 제약조건을 걸었다.
     }
 }
 
+class Type<T> where T : IEnumerator, IDisposable { }                // 제너릭 1개에 2개 이상의 제약을 걸수 있고
+
+class Dict<T, V> where T : IEnumerator where V : IDisposable { }    // 2개 이상의 제너릭에 각각 제약을 걸어 줄 수 있다.
+
 namespace CPPPP
 {
     class Where
@@ -47,7 +51,7 @@ namespace CPPPP
         {
             Console.WriteLine(Utility.Max(1, 2));   // IComparable을 상속받은 객체만 받을 수 있게 정의했으므로 값이 나온다.
             Console.WriteLine(BookUtility.Max(1, 2));   // Book형은 IComparable을 상속받지도 않았고, CompareTo도 정의가 안되어 있으므로 오류
-            Console.WriteLine(GenericUtility.Max(1, 2));    // 제너릭하지만 모든 객체가 IComparable을 상속받지 않았으므로 실행도중 오류
+            Console.WriteLine(GenericUtility.Max(1, 2));    // 제너릭하지만 모든 객체가 IComparable을 상속받지 않았으므로 실행도중 오류                                                            
         }
     }
 }
