@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;           // 자료구조를 사용하려면 추가, 콜렉션의 문제는 Object를 인자로 받기 때문에 박싱이 발생한다.
+using System.Collections;           // 자료구조를 사용하려면 추가, 콜렉션의 문제는 object를 인자로 받기 때문에 박싱이 발생한다.
 using System.Collections.Generic;   // 값형식까지 커버하고 싶으면 Generic을 사용해야 한다.
 using System.Linq;
 using System.Text;
