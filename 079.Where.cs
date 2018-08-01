@@ -17,7 +17,7 @@ class BookUtility       // Book을 사용하는 클래스
     }
 }
 
-class GenericUtility    // 자료형을 제너릭하게 템플릿으로 사용하는 클래스
+class GenericUtility    // 자료형을 제너릭하게 사용하는 클래스
 {
     public static T Max<T>(T item1, T item2)
     {
