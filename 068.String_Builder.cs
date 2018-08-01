@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text;              // StringBuilder를 사용하려면 추가
 using System.Threading.Tasks;
 using System.Diagnostics;       // 성능측정을 위해 추가
 
