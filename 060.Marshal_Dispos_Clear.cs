@@ -38,7 +38,7 @@ class UnmanagedMemoryManager : IDisposable
         Dispose(false);         // Dispose()를 호출하는 경우는 Dispose()를 명시적으로 호출하는 경우다.
     }
 
-    ~UnmanagedMemoryManager()   // 소멸자
+    ~UnmanagedMemoryManager()   // 종료자
     {
         Dispose(true);          // Dispose에 true를 전달
                                 // Dispose는 true를 받으면 아무 작업도 안하고 탈출한다.
