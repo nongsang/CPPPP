@@ -11,7 +11,7 @@ namespace CPPPP
     {
         public static void Main()
         {
-            Stack st = new Stack();     // 자주 쓰는 스택
+            Stack st = new Stack();     // 후입선출, 나중에 들어온 데이터일 수록 먼저 삭제되는 자료구조
 
             st.Push(1);                 // 1이 제일 밑에 있다.
             st.Push(5);                 // 5가 그 위에 올라간다.
