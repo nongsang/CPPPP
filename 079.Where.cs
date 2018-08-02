@@ -28,7 +28,7 @@ class GenericUtility    // 자료형을 제너릭하게 사용하는 클래스
     }
 }
 
-class Utility   // 템플릿을 사용하지만 제약조건을 걸었다.
+class Utility           // 템플릿을 사용하지만 제약조건을 걸었다.
 {
     public static T Max<T>(T item1, T item2) where T : IComparable  // T는 제너릭이지만 IComparable을 상속받는 데이터만 대입이 가능하다.
     {
@@ -39,9 +39,10 @@ class Utility   // 템플릿을 사용하지만 제약조건을 걸었다.
     }
 }
 
-class Type<T> where T : IEnumerator, IDisposable { }                // 제너릭 1개에 2개 이상의 제약을 걸수 있고
+class Type<T> where T : IEnumerable, IDisposable { }                // 제너릭 1개에 2개 이상의 제약을 걸수 있고
 
-class Dict<T, V> where T : IEnumerator where V : IDisposable { }    // 2개 이상의 제너릭에 각각 제약을 걸어 줄 수 있다.
+class Dict<T, V> where T : IEnumerable where V : IDisposable { }    // 2개 이상의 제너릭에 각각 제약을 걸어 줄 수 있다.
+                                                                    // 물론 IEnumerable를 사용하려면 System.Collections를 추가해야 한다.
 
 namespace CPPPP
 {
@@ -51,7 +52,7 @@ namespace CPPPP
         {
             Console.WriteLine(Utility.Max(1, 2));   // IComparable을 상속받은 객체만 받을 수 있게 정의했으므로 값이 나온다.
             Console.WriteLine(BookUtility.Max(1, 2));   // Book형은 IComparable을 상속받지도 않았고, CompareTo도 정의가 안되어 있으므로 오류
-            Console.WriteLine(GenericUtility.Max(1, 2));    // 제너릭하지만 모든 객체가 IComparable을 상속받지 않았으므로 실행도중 오류                                                            
+            Console.WriteLine(GenericUtility.Max(1, 2));    // GenericUtility가 제너릭으로 정의되어 있지만 제약을 걸지 않았으므로 오류
         }
     }
 }
