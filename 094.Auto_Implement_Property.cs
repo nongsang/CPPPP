@@ -15,11 +15,11 @@ class Person
 
     public string _name { get; set; }       // 하지만 이렇게 하면 더 쉽게 프로퍼티를 정의할 수 있다.
 
-    //private string n;                       // n은 그냥 임시로 쓴 이름이다. 실제로는 컴파일러가 식별가능한 임시객체를 만든다.
-    //public string _name                     // 위에 자동 구현 프로퍼티를 사용하면
+    //private string n;                     // n은 그냥 임시로 쓴 이름이다. 실제로는 컴파일러가 식별가능한 임시객체를 만든다.
+    //public string _name                   // 위에 자동 구현 프로퍼티를 사용하면
     //{
-    //    get { return n; }                   // 알아서 이렇게
-    //    set { n = value; }                  // 확장하여 컴파일한다.
+    //    get { return n; }                 // 알아서 이렇게
+    //    set { n = value; }                // 확장하여 컴파일한다.
     //}
 }
 
