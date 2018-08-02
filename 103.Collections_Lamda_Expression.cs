@@ -28,6 +28,8 @@ namespace CPPPP
             }
 
             List<int> evenList = list.FindAll(elem => elem % 2 == 0);   // 콜렉션의 FindAll과 람다로 해당 값을 모두 찾을 수 있다.
+                                                                        // 여기서 중요한 것은 List<int>형으로 받았다는 점이다.
+                                                                        // 다음에 또 나오니까 기억해두도록
             evenList.ForEach(elem => { Console.Write(elem + ","); });   // 그리고 출력
 
             int count = 0;
