@@ -13,7 +13,7 @@ namespace CPPPP
 
         public static void Main()               // 람다 전용 델리게이트가 존재한다.
         {
-            Action<string> Log = (txt) =>       // Action<T>는 반환값이 없는 델리게이트다.
+            Action<string> Log = txt =>         // Action<T>는 반환값이 없는 델리게이트다.
             {
                 Console.WriteLine(txt);         // 따라서 어떤 기능을 출력만 하는 등의 기능을 만들 때 좋다.
             };
