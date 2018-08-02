@@ -7,14 +7,14 @@ using System.Threading;         // 스레드를 사용하려면 추가해야 한
 
 namespace CPPPP
 {
-    class Code_Lamda_Expression                     // 람다는 수학에 기초한 학문이지만 여기서는 코드로써의 람다식을 구현한다.
+    class Code_Lamda_Expression                 // 람다는 수학에 기초한 학문이지만 여기서는 코드로써의 람다식을 구현한다.
     {
         public static void Main()
         {
-            Thread th1 = new Thread(                // 익명 메소드를
-                delegate (object obj)               // 더 짧게 사용할
+            Thread th1 = new Thread(
+                delegate (object obj)           // 익명 메소드를 
                 {
-                    Console.WriteLine("바보");      // 수 있다.
+                    Console.WriteLine("바보");  // 더 짧게 만들 수 있다.
                 });
 
             th1.Start();
