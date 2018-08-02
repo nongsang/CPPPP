@@ -23,6 +23,19 @@ class Person
     }
 }
 
+class Book
+{
+    int _id;
+    public string _name;// 필드가 public이므로 직접 값을 넣고 생성할 수 있다.
+
+    public Book() { }   // 생성자
+
+    public Book(int id) // 값을 1개 받는 생성자
+    {
+        _id = id;
+    }
+}
+
 namespace CPPPP
 {
     class Object_Intialization
@@ -33,6 +46,9 @@ namespace CPPPP
             Person p2 = new Person { Name = "Anders" };             // public으로 선언된
             Person p3 = new Person { Age = 10 };                    // 프로퍼티나 필드에 직접
             Person p4 = new Person { Name = "Anders", Age = 10 };   // 생성하면서 값을 저장할 수 있다.
+
+            Book b1 = new Book();                                   // 생성자가 정의되어 있으므로 가능
+            Book b2 = new Book(1) { _name = "바보" };               // 생성자와 필드 초기화를 동시에 사용할 수 있다.
         }
     }
 }
