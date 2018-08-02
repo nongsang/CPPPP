@@ -18,6 +18,8 @@ namespace CPPPP
                 Console.WriteLine(txt);         // 더 쉬운 방법은?
 
             Console.WriteLine(txt ?? "(Null)"); // ?? 연산자를 이용하여 값이 있으면 txt값을, null이라면 (Null)을 출력
+                                                // 주의해야 할 것은 ?? 연산자는 참조형 변수를 처리할 떄 쓰인다.
+                                                // 값형식일 때는 사용할 수 없음을 알아두자.
         }
     }
 }
