@@ -29,6 +29,7 @@ namespace CPPPP
 
             Console.WriteLine(pi);      // 반환값이 있기 때문에
             Console.WriteLine(root);    // WriteLine()으로 출력해줘야 한다.
+                                        // 람다 전용 델리게이트는 인수를 총 16개까지 만들 수 있다.
         }
     }
 }
