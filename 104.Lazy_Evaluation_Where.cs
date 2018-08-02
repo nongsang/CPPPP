@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq;                  // Where을 사용하기 위해서 추가
 using System.Text;
 using System.Threading.Tasks;
 
