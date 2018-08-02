@@ -7,7 +7,7 @@ using System.Threading;         // 스레드를 사용하려면 추가해야 한
 
 namespace CPPPP
 {
-    class Anonymous_Method
+    class Anonymous_Method      // 여기서 스레드를 배우려면 Multithreading/C#/01.Thread_Create.cs로 간다.
     {
         static void Print()
         {
