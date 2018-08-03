@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Lamda_Expression_Delegate
+    class Lambda_Expression_Delegate
     {
         delegate int? Divide(int a, int b);     // null을 받을 수 있는 int형 델리게이트
 
