@@ -27,7 +27,7 @@ namespace CPPPP
                 new Person { Name = "바보", Age = 19, Address = "Korea" },
                 new Person { Name = "멍청이", Age = 25, Address = "Korea" },
                 new Person { Name = "Adam", Age = 23, Address = "USA" },
-                new Person { Name = "marx", Age = 42, Address = "Germany" },
+                new Person { Name = "Marx", Age = 42, Address = "Germany" },
                 new Person { Name = "Bacon", Age = 63, Address = "Britain" },
                 new Person { Name = "Freud", Age = 25, Address = "Austria" },
                 new Person { Name = "Nietzsche", Age = 23, Address = "Germany" },
