@@ -26,22 +26,6 @@ namespace CPPPP
             Array.ForEach(list, (e) => Console.Write(e + ","));
             Console.WriteLine();
         }
-
-        //public ref int RefReturnOfLocalValue()
-        //{
-        //    int x = 5;
-        //    return ref x;
-        //}
-
-        //public void ChangeRefLocalVar()
-        //{
-        //    int a = 5;
-        //    ref int b = ref a;
-
-        //    int c = 10;
-        //    b = ref c;
-        //    ref b = ref c;
-        //}
     }
 
     class Ref_Extention_Return
