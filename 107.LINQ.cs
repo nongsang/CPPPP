@@ -42,8 +42,8 @@ namespace CPPPP             // 데이터가 많으면 찾기가 힘들다.
             //    yield return person;
             // 으로 해석이 가능하다.
             // people의 원소를 person이라는 레퍼런스로 모두 돌면서 person 레퍼런스가 가리키는 모든 것을 반환하는 것.
-            // 그리고 그 원소들을 all에 저장한다.
-            // 여기서 all1은 IEnumerable<person>형이다.
+            // 그리고 그 원소들을 all1에 저장한다.
+            // 여기서 all은 IEnumerable<person>형이다.
 
             foreach (var item in all1)       // all에 저장된 값들을
                 Console.WriteLine(item);    // 모두 출력
