@@ -7,7 +7,7 @@ using static System.Console;    // WriteLine()이라고 줄여서 쓰고싶어
 
 namespace CPPPP
 {
-    class Out_Extention
+    class Out_Improvement
     {
         public static void Main()
         {
