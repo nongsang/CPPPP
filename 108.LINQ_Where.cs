@@ -35,7 +35,7 @@ namespace CPPPP
 
             var ageOver30 = from person in people       // person이란 레퍼런스로 people 집단 중에서 원소 하나씩 지정하는데
                             where person.Age > 30       // 원소의 Age 필드의 값이 30 초과인 원소의
-                            select person;              // 원소 전체를 반환
+                            select person;              // 원소를 person으로 형변환하여 (person형이면 그냥) 반환
 
             foreach (var item in ageOver30)             // 조건에 맞는 리스트 모두
                 Console.WriteLine(item);                // 출력
