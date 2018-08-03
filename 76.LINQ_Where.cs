@@ -8,7 +8,7 @@ namespace CPPPP
 {
     class LINQ_Where
     {
-        class Person                    // 사람 데이터를 만든다.
+        class Person        // 리스트에 넣을 데이터
         {
             public string Name { get; set; }
             public int Age { get; set; }
@@ -37,8 +37,8 @@ namespace CPPPP
                             where person.Age > 30       // 원소의 Age 필드의 값이 30 초과인 원소의
                             select person;              // 원소 전체를 반환
 
-            foreach (var item in ageOver30)     // 전체
-                Console.WriteLine(item);        // 출력
+            foreach (var item in ageOver30)             // 조건에 맞는 리스트 모두
+                Console.WriteLine(item);                // 출력
         }
     }
 }
