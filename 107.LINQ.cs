@@ -24,11 +24,11 @@ namespace CPPPP             // 데이터가 많으면 찾기가 힘들다.
         {
             List<Person> people = new List<Person>          // 각 요소가 Person인 리스트
             {
-                new Person { Name = "바보", Age = 19, Address = "Korea" },        // 리스트를 생성하자마자 넣는 방법이다.
-                new Person { Name = "멍청이", Age = 25, Address = "Korea" },       // 예전에는 리스트를 먼저 만들어 놓고
-                new Person { Name = "Adam", Age = 23, Address = "USA" },          // Add() 메소드를 이용해서
-                new Person { Name = "marx", Age = 42, Address = "Germany" },      // 반복해서 넣어줬어야 했다.
-                new Person { Name = "Bacon", Age = 63, Address = "Britain" },     // C# 3.0부터 가능한 문장이다.
+                new Person { Name = "바보", Age = 19, Address = "Korea" },        // 리스트를 생성하자마자 넣는다.
+                new Person { Name = "멍청이", Age = 25, Address = "Korea" },
+                new Person { Name = "Adam", Age = 23, Address = "USA" },
+                new Person { Name = "marx", Age = 42, Address = "Germany" },
+                new Person { Name = "Bacon", Age = 63, Address = "Britain" },
                 new Person { Name = "Freud", Age = 25, Address = "Austria" },
                 new Person { Name = "Nietzsche", Age = 23, Address = "Germany" },
             };
