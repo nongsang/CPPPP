@@ -48,11 +48,11 @@ namespace CPPPP
                 new MainLanguage { Name = "marx", Language = "C++"}
             };
 
-            var nameToLangList = from person in people       // person이란 레퍼런스로 people 집단 중에서 원소 하나씩 지정하는데
-                                 // language라는 레퍼런스를 languages 집단에서
+            var nameToLangList = from person in people  // person이란 레퍼런스로 people 집단의 원소 하나씩 지정하고
+                                 // language라는 레퍼런스를 languages 집단의 원소를 하나씩 지정하여
                                  // person이 가리키는 원소의 Name 필드와 language가 가리키는 원소의 Name 필드가 같은 원소들을 묶어서
                                  join language in languages on person.Name equals language.Name
-                                 // new로 변환한 문자열로 출력한다.
+                                 // 익명 타입으로 변환한 문자열로 출력한다.
                                  select new { Name = person.Name, Age = person.Age, Language = language.Language };
                                  // 서로 별개의 자료구조를 연관지어서 같은, 혹은 다른 데이터를 찾는데 쓰일 수 있다.
 
