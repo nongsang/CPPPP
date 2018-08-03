@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Lamda_Expression_Dedicated_Delegate
+    class Lambda_Expression_Dedicated_Delegate
     {
         delegate int? Divide(int a, int b);     // 만약 많은 람다를 쓴다면 이렇게 각각의 델리게이트를 만들어야 하잖아.
         delegate int Devide(int a, int b);      // 어차피 람다를 한번만 쓸건데 델리게이트를 굳이 람다 수에 맞게 많이 만들어야 하나?
