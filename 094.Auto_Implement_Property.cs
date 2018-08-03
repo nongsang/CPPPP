@@ -25,8 +25,8 @@ class Person
 
 namespace CPPPP
 {
-    class Auto_Implemented_Property
-    {
+    class Auto_Implemented_Property             // 그리고 C# 6.0부터 자동 구현 속성 초기화로 확장하여 사용할 수 있다.
+    {                                           // 자세한 내용은 118.Auto_Implement_Property_Initialization를 참조
         public static void Main()
         {
             Person person = new Person();
