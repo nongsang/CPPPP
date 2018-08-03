@@ -33,7 +33,7 @@ namespace CPPPP
                 new Person { Name = "Nietzsche", Age = 23, Address = "Germany" },
             };
 
-            var addrGroup = from person in people       // person이란 레퍼런스로 people 집단 중에서 원소 하나씩 지정하는데
+            var addrGroup = from person in people           // person이란 레퍼런스로 people 집단 중에서 원소 하나씩 지정하는데
                             where person.Age > 30           // Age가 30초과인 원소들만을
                             group person by person.Address; // person이 가리키는 원소들을 Address로 묶는다.
                                                             // group by는 select가 불가능하다.
