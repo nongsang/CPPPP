@@ -27,7 +27,7 @@ namespace CPPPP             // 데이터가 많으면 찾기가 힘들다.
                 new Person { Name = "바보", Age = 19, Address = "Korea" },        // 리스트를 생성하자마자 넣는다.
                 new Person { Name = "멍청이", Age = 25, Address = "Korea" },
                 new Person { Name = "Adam", Age = 23, Address = "USA" },
-                new Person { Name = "marx", Age = 42, Address = "Germany" },
+                new Person { Name = "Marx", Age = 42, Address = "Germany" },
                 new Person { Name = "Bacon", Age = 63, Address = "Britain" },
                 new Person { Name = "Freud", Age = 25, Address = "Austria" },
                 new Person { Name = "Nietzsche", Age = 23, Address = "Germany" },
