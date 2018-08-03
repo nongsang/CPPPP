@@ -45,16 +45,18 @@ namespace CPPPP
                 new MainLanguage { Name = "멍청이", Language = "C++"},
                 new MainLanguage { Name = "바보", Language = "C#"},
                 new MainLanguage { Name = "Freud", Language = "Java"},
-                new MainLanguage { Name = "Marx", Language = "C++"}
+                new MainLanguage { Name = "Marx", Language = "C++"},
+                new MainLanguage { Name = "Benjamin", Language = "Python"}
             };
 
-            var nameToLangList = from person in people  // person이란 레퍼런스로 people 집단 중에서 원소 하나씩 지정하는데
-                                 // language라는 레퍼런스를 languages 집단에서
-                                 // person이 가리키는 원소의 Name 필드와 language가 가리키는 원소의 Name 필드가 같은 원소들을 묶어서
-                                 join language in languages on person.Name equals language.Name
-                                 // 익명 타입으로 변환한 문자열로 출력한다.
+            var nameToLangList = from person in people
+                                 // people에 있는 요소들을 person으로 가리켜서 반환하는데
+                                 join language in languages
+                                 // languages에 있는 요소들을 language로 가리켜서 서로 연관짖는다.
+                                 on person.Name equals language.Name
+                                 // person이 가리키는 요소의 Name과 language가 가리키는 요소의 Name이 같은 것끼리 묶어서
                                  select new { Name = person.Name, Age = person.Age, Language = language.Language };
-                                 // 서로 별개의 자료구조를 연관지어서 같은, 혹은 다른 데이터를 찾는데 쓰일 수 있다.
+                                 // 그리고 익명타입으로 형변환하여 nameToLangList에 반환한다.
 
             foreach (var item in nameToLangList)     // 전체
                 Console.WriteLine(item);             // 출력
