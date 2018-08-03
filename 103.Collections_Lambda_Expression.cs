@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPPPP
 {
-    class Collections_Lamda_Expression
+    class Collections_Lambda_Expression
     {
         public static void Main()
         {
