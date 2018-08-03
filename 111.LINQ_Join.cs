@@ -41,9 +41,9 @@ namespace CPPPP
 
             List<MainLanguage> languages = new List<MainLanguage>       // Person 리스트와 별개로 다른 리스트가 존재
             {
-                new MainLanguage{Name = "바보" , Language = "C"},
+                new MainLanguage { Name = "바보", Language = "C"},
                 new MainLanguage { Name = "멍청이", Language = "C++"},
-                new MainLanguage{Name = "바보" , Language = "C#"},
+                new MainLanguage { Name = "바보", Language = "C#"},
                 new MainLanguage { Name = "Freud", Language = "Java"},
                 new MainLanguage { Name = "marx", Language = "C++"}
             };
@@ -54,10 +54,10 @@ namespace CPPPP
                                  join language in languages on person.Name equals language.Name
                                  // new로 변환한 문자열로 출력한다.
                                  select new { Name = person.Name, Age = person.Age, Language = language.Language };
-                                // 서로 별개의 자료구조를 연관지어서 같은, 혹은 다른 데이터를 찾든데 쓰일 수 있다.
+                                 // 서로 별개의 자료구조를 연관지어서 같은, 혹은 다른 데이터를 찾는데 쓰일 수 있다.
 
             foreach (var item in nameToLangList)     // 전체
-                Console.WriteLine(item);            // 출력
+                Console.WriteLine(item);             // 출력
         }
     }
 }
