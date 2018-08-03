@@ -18,6 +18,8 @@ public class BitMode            // CPPPP 안에만 정의되어 있다면
     public const int OFF = 0;   // 즉, 전역으로 선언된 데이터만 using static으로 사용 가능
 }
 
+                                // 또한 099.Extention_Method에서 배웠던 확장 메소드 또한 using static을 사용할 수 없다.
+
 namespace CPPPP
 {
     //public enum Day                   // namespace에 소속되어 있으므로
