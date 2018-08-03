@@ -29,8 +29,6 @@ class Person
 
         // 067.String_Format에서 했던 문자 간격이나 형식을 지정할 수 있다.
         // return $"이름: {Name,-10}, 나이: {Age,5:X}";
-
-        // 070.Regular_Expression에서 사용했었으니 다시 확인해보도록
     }
 }
 
