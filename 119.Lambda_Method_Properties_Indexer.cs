@@ -40,6 +40,7 @@ public class Vector
     static double RadianToDegree(double angle) => angle * (180.0 / Math.PI);
 
     // 생성자 / 종료자, 이벤트의 add/ Remover 접근자의 경우 메소드지만 람다 식을 이용하여 구현할 수 없다.
+    // 137.Lambda_Method_Definition_Extension에서 람다 식을 확장법을 알려준다.
 }
 
 namespace CPPPP
