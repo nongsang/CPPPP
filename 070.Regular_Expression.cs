@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;   // 정규표현식을 사용하려면 �
 
 namespace CPPPP
 {
-    class RegularExpression
+    class Regular_Expression
     {
         static bool IsEmail(string email)
         {
