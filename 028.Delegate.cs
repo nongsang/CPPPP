@@ -82,7 +82,8 @@ namespace CPPPP
             Console.WriteLine();
 
             // 델리게이트에 각 메소드들을 연산 및 저장으로 인스턴스를 추가한다.
-            CalcDelegate calc = Add;
+            // CalcDelegate calc;       // 그냥 선언만 해도 되지만 이후 += 연산이 불가능하다.
+            CalcDelegate calc = Add;    // 메소드 대입연산이 존재해야 이후 += 인스턴스 추가  가능하다.
             calc += Sub;
             calc += Mul;
             calc += Div;
